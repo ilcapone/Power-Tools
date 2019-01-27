@@ -1,0 +1,6 @@
+
+$env:USERDOMAIN   	# Active directori Domain
+$env:USERNAME  		# USername
+$env:logonserver  	# nombre del controlador del dominio
+net groups /domain 	# Lista de grupos existente en el dominio actual
+net view /domain 	# Lista de equipos en el dominio, puede estar capado

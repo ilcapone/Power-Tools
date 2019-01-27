@@ -1,0 +1,7 @@
+$textfile = "d:\Noticias\Urls_Noticiarios.txt"
+ 
+ForEach ($url in Get-Content $textfile) {
+    $IE=new-object -com internetexplorer.application
+    $IE.navigate2($url)
+    $IE.visible=$true
+}

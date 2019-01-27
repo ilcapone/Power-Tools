@@ -1,0 +1,44 @@
+# Nuevo objeto de tipo Excel
+$Excel = New-Object -ComObject Excel.Application
+
+# Así evitamos que la hoja se abra tras asignar su dirección física
+$Excel.Visible = $false
+
+# Suponemos que la hoja Excel está en la misma dirección que el script PowerShell
+#$CurrentPath = pwd
+$FilePath = "d:\Operaciones_Excel\PruebaToread.xlsx"
+
+# Ya tenemos cargado nuestra libro Excel
+$WorkBook = $Excel.Workbooks.Open($FilePath)
+
+# Leer la primera hoja
+$FirstWorkSheet = $WorkBook.WorkSheets.Item(1)
+$WorksheetRange = $FirstWorkSheet.UsedRange
+$maxRow = $WorksheetRange.Rows.Count
+
+# Contador de filas
+$intRow = 1
+
+# Limpiamos la pantalla
+Clear-Host
+
+do {
+	# Contador de columnas
+	$intColumn = 1
+	do {
+		# Obtenemos el valor para la fila y columna de las variables
+		$ColumnValue = $FirstWorkSheet.Cells.Item($intRow, $intColumn).Value()
+       
+		# Dibujamos y sumamos uno al contador de columnas
+		Write-Host -NoNewLine "`t $ColumnValue"	
+		$intColumn ++
+	   
+	# Continuar mientras la siguiente columna no esté vacía 
+	} While($FirstWorkSheet.Cells.Item($intRow, $intColumn).Value()-ne $null)
+
+	# Dibujamos un separador de filas y sumamos uno a dicho contador
+	Write-Host "`n--------------------------------------------------------------"
+	$intRow++
+   
+# Continuar mientras no sea la última
+} While($maxRow -ge $intRow)

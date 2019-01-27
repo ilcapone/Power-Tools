@@ -1,0 +1,15 @@
+
+
+Get-PSDrive  # Listar discos de almacenamiento del sistema
+
+[System.Security.Principal.WindowsIdentity]::GetCurrent() # Obtener informacion de los permisos del usuario que ejecuta el proceso
+([System.Security.Principal.WindowsIdentity]::GetCurrent()).Groups # Mas detallado
+[bool](([System.Security.Principal.WindowsIdentity]::GetCurrent()).groups -match"S-1-5-32-544") # True o False si esta en el grupo de administradores
+
+wmic qfe list		# Parches instalados en el sistema
+
+
+
+
+
+ 

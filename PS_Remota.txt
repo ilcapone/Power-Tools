@@ -1,0 +1,5 @@
+
+enter-pssession TARGETMACHINE
+
+invoke-command -computername machine1, machine2 -filepath c:\Script\script.ps1
+

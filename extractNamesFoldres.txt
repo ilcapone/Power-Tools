@@ -1,0 +1,1 @@
+Get-ChildItem –Recurse -name | Select-String Policy, Standard #Extrae todos los nombres del directorio y subdirectorios y filtra por palabras clabes contenidas en los nombres

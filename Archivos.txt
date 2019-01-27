@@ -1,0 +1,2 @@
+
+New-Item "test.txt" -ItemType "file" # Crear archivo

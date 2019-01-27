@@ -1,0 +1,12 @@
+
+
+Get-WmiObject -Class Win32_ComputerSystem # Información general del sistema
+Get-WmiObject -Class Win32_Desktop -ComputerName . #Información de equipos de escritorio
+Get-WmiObject -Class Win32_BIOS -ComputerName . # Información de la BIOS
+Get-WmiObject -Class Win32_Processor -ComputerName . # Información del procesador
+Get-WmiObject -Class Win32_QuickFixEngineering -ComputerName . # Revisiones instaladas
+Get-WmiObject -Class Win32_OperatingSystem -ComputerName . | Select-Object -Property NumberOfLicensedUsers,NumberOfUsers,RegisteredUser  # Enumeracion de usuarios del sistema
+Get-WmiObject -Class Win32_LogonSession -ComputerName . # Info sesion de inicio
+Get-WmiObject -Class Win32_ComputerSystem -Property UserName -ComputerName . # Usuario que inicio sesion en el sistema
+Get-WmiObject -Class Win32_LocalTime -ComputerName . | Select-Object -Property [a-z]* # Hora del sistema
+Get-WmiObject -Class Win32_Service -ComputerName . | Format-Table -Property Status,Name,DisplayName -AutoSize -Wrap # Servicios del sistema
