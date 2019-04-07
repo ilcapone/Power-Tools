@@ -1,0 +1,9 @@
+
+# read file to encode
+$content = [IO.File]::ReadAllText("F:\PayLoads\PowerShell\PS_Meterpreter.txt")
+
+# encode
+$encoe = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($content))
+
+#decode
+[System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String($encoe))
