@@ -1,2 +1,2 @@
 # Power-Tools
-Tricks and tracks por power hack
+Tricks and tracks for power hack
