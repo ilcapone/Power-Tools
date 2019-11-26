@@ -7,3 +7,6 @@ $encoe = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($con
 
 #decode
 [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String($encoe))
+
+# From cmd
+powershell.exe -encodedCommand [Encode command]
