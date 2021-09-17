@@ -1,4 +1,4 @@
-function powercat
+function p0w3rc4t
 {
   param(
     [alias("Client")][string]$c="",
